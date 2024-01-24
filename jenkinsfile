@@ -6,6 +6,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh "docker build . -t nginxdockerimage"
+                sh "docker rm -f \$(docker ps -q)"
             }
         }
 
