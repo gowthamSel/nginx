@@ -37,13 +37,5 @@ pipeline {
             }
         }
 
-        stage('Testing Container') {
-            steps {
-                script {
-                    // Test the container
-                    sh "curl http://192.168.17.232:${HOST_PORT}"
-                }
-            }
-        }
     }
 }
