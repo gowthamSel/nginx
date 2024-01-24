@@ -1,19 +1,36 @@
-currentBuild.displayName = "nginx: " + currentBuild.number
-
 pipeline {
     agent any
+
     stages {
-        stage('Build Docker Image') {
+       
+        stage('Remove Existing Containers') {
             steps {
-                sh "docker build . -t nginxdockerimage"
+                script {
+                    // This command will remove the existing running containers
+                    // sh "docker rm -f \$(docker ps -q)"
+                    echo "remove"
+                }
             }
         }
 
-        stage('Spin Container') {
+        stage('Build and Test') {
             steps {
-                sh "docker run -itd -p 6666:80 --name nginxapp nginxdockerimage"
+                script {
+                   // dockerImage = docker.build("docker-image:latest")
+                   sh "docker build . -t  docker-image:latest"
+                }
+                script {
+                    sh "docker run -itd -p 8057:80 docker-image:latest"
+                }
             }
         }
-    
+
+        stage('Testing container') {
+            steps {
+                script {
+                    sh "curl http://10.196.157.137:8057"
+                }
+            }
+        }
     }
 }
