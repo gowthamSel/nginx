@@ -20,11 +20,11 @@ RUN crontab /etc/cron.d/crontab.txt && touch /var/log/cron.log
 EXPOSE 80
 
 # Use an entrypoint script to handle initialization
-# COPY entrypoint.sh /entrypoint.sh
-COPY entrypoint.sh /usr/share/nginx/html/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+# COPY entrypoint.sh /usr/share/nginx/html/entrypoint.sh
 
-# RUN chmod +x /entrypoint.sh
-RUN chmod +x /usr/share/nginx/html/entrypoint.sh
+RUN chmod +x /entrypoint.sh
+# RUN chmod +x /usr/share/nginx/html/entrypoint.sh
 # ENTRYPOINT ["/usr/share/nginx/html/system_info.sh"]
 # CMD ["nginx", "-g", "daemon off;"]
 ENTRYPOINT ["/entrypoint.sh"]
