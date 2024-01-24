@@ -33,6 +33,9 @@ while true; do
   </html>
   EOF
 
+  # Log debug information
+  echo "HTML file updated at $(date)"
+
   # Wait for 1 second before the next iteration
   sleep 1
 done
