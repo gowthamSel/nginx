@@ -59,9 +59,6 @@ while true; do
     </html>
 EOF
 
-    # Log debug information
-    echo "HTML file updated at $(date)"
-
     # Restart Nginx to apply changes
     # systemctl restart nginx
 
