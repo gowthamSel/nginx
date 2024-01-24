@@ -7,6 +7,8 @@ RUN chmod +x /usr/share/nginx/html/system_info.sh
 # RUN  chmod 0644 /etc/cron.d/crontab.txt
 # RUN crontab /etc/cron.d/crontab.txt && touch /var/log/cron.log
 EXPOSE 80
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+# COPY entrypoint.sh /entrypoint.sh
+# RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "-c", "/usr/share/nginx/html/system_info.sh && nginx -g 'daemon off;'"]
+
+# ENTRYPOINT ["/entrypoint.sh"]
