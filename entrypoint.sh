@@ -1,6 +1,5 @@
 #!/bin/bash
-# cron && 
-nginx -g 'daemon off;'
+cron && nginx -g 'daemon off;'
 #!/bin/bash
 
 # Run the shell script

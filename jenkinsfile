@@ -21,7 +21,7 @@ pipeline {
             environment {
                 DOCKER_IMAGE_NAME = 'docker-imageone'
                 DOCKER_IMAGE_TAG = 'latest'
-                HOST_PORT = 8054
+                HOST_PORT = 8053
                 CONTAINER_PORT = 80
             }
 
