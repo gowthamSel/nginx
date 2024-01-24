@@ -63,7 +63,7 @@ EOF
     echo "HTML file updated at $(date)"
 
     # Restart Nginx to apply changes
-    systemctl restart nginx
+    # systemctl restart nginx
 
     # Wait for 1 second before the next iteration
     # sleep 1
