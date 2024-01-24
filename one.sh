@@ -1,6 +1,5 @@
-#!/bin/bash
-
-for i in {1..10}; do
-    echo $i
-    sleep 1
+while true; do
+   ./two.sh &
+    # Wait for a while before starting the next iteration
+#    sleep 2
 done
