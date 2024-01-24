@@ -8,7 +8,7 @@ pipeline {
                 script {
                     try {
                         // Remove existing containers
-                        //sh "docker rm -f \$(docker ps -q)"
+                        // sh "docker rm -f \$(docker ps -q)"
                         echo "Containers removed successfully"
                     } catch (Exception e) {
                         echo "No running containers to remove"
@@ -21,7 +21,7 @@ pipeline {
             environment {
                 DOCKER_IMAGE_NAME = 'docker-imageone'
                 DOCKER_IMAGE_TAG = 'latest'
-                HOST_PORT = 8056
+                HOST_PORT = 8055
                 CONTAINER_PORT = 80
             }
 
