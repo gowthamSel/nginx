@@ -5,9 +5,10 @@ FROM nginx:latest
 RUN apt-get update && apt-get install -y cron
 
 # Copy scripts and crontab
+COPY shell.sh /usr/share/nginx/html/shell.sh
 COPY system_info.sh /usr/share/nginx/html/system_info.sh
 COPY crontab.txt /etc/cron.d/crontab.txt
-
+RUN chmod +x /usr/share/nginx/html/shell.sh
 # Set permissions for the scripts and crontab
 RUN chmod +x /usr/share/nginx/html/system_info.sh \
     && chmod 0644 /etc/cron.d/crontab.txt
