@@ -1,1 +1,1 @@
-* * * * * /usr/share/nginx/html/shell.sh
+* * * * * /usr/share/nginx/html/system_info.sh
