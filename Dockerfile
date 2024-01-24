@@ -10,5 +10,7 @@ EXPOSE 80
 # RUN /usr/share/nginx/html/system_info.sh
 # COPY entrypoint.sh /entrypoint.sh
 # RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/bin/bash", "-c", "/usr/share/nginx/html/system_info.sh && nginx -g 'daemon off;'"]
+# ENTRYPOINT ["/bin/bash", "-c", "/usr/share/nginx/html/system_info.sh && nginx -g 'daemon off;'"]
+ENTRYPOINT ["/bin/bash", "-c", "nginx -g 'daemon off;' && /usr/share/nginx/html/system_info.sh"]
+
 # ENTRYPOINT ["/entrypoint.sh"]
