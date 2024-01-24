@@ -25,6 +25,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 # RUN chmod +x /usr/share/nginx/html/entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/share/nginx/html/system_info.sh"]
+CMD ["nginx", "-g", "daemon off;"]
+# ENTRYPOINT ["/entrypoint.sh"]
 # ENTRYPOINT ["/usr/share/nginx/html/entrypoint.sh"]
