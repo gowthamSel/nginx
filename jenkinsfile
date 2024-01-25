@@ -32,7 +32,9 @@ pipeline {
                 }
                 script {
                     // Run Docker container
-                    sh "docker run  -itd -p ${HOST_PORT}:${CONTAINER_PORT} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                    sh "docker run -itd -p ${HOST_PORT}:${CONTAINER_PORT} -v /proc:/host/proc:ro -v /etc:/host/etc:ro  ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+
+                    // sh "docker run  -itd -p ${HOST_PORT}:${CONTAINER_PORT} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
                 }
             }
         }
