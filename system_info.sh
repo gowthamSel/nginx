@@ -72,7 +72,7 @@
 
 while true; do
     # Capture host system information
-    # HOST_CPU_INFO=$(lscpu)
+    HOST_CPU_INFO=$(lscpu)
     HOST_DATE_INFO=$(date)
     HOST_DISK_INFO=$(df -h)
 
@@ -87,7 +87,7 @@ while true; do
         <h3>Host System Information</h3>
         <pre>
         Host CPU Information:
-        # $HOST_CPU_INFO
+        $HOST_CPU_INFO
 
         Host Date and Time:
         $HOST_DATE_INFO
