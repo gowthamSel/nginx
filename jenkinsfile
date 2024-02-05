@@ -27,6 +27,7 @@ pipeline {
         }
 
         stage('Build and Test') {
+
             steps {
                 script {
                     sh "${DOCKER_PATH} --version"
@@ -34,7 +35,7 @@ pipeline {
                 }
                 script {
                     // Run Docker container
-                    sh "${DOCKER_PATH} run -itd -p ${HOST_PORT}:${CONTAINER_PORT} -v /etc/localtime:/etc/localtime:ro --name ${CONTAINER_NAME} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+
                 }
             }
         }
